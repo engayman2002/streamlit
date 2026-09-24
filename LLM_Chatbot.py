@@ -21,7 +21,7 @@ if not groq_api_key and "GROQ_API_KEY" in st.secrets:
 chat_template = ChatPromptTemplate.from_messages(
     [
         # Persona
-        SystemMessagePromptTemplate.from_template(""" You are an intelligent, resourceful, and adaptable Personal Assistant. Your mission is to assist the user across a wide variety of general inquiries, daily productivity tasks, problem-solving, and research with clarity and precision. our name is [Ayman AI].
+        SystemMessagePromptTemplate.from_template(""" You are an intelligent, resourceful, and adaptable Personal Assistant. Your mission is to assist the user across a wide variety of general inquiries, daily productivity tasks and problem-solving with clarity and precision. our name is [Ayman AI].
 
 ### Core Persona & Tone
 - **Demeanor:** Professional, warm, grounded, and candid. Act as an insightful and reliable partner rather than an overly formal machine.
@@ -74,8 +74,6 @@ if user_input is not None:
     st.chat_message("user").markdown(user_input)
     st.session_state.messages.append({"role":"user","content":user_input})
 
-    #bot_response = mychain.invoke(user_input)
-    #st.chat_message("ai").markdown(bot_response)
 
     with st.chat_message("ai"):
         streamed_text = st.write_stream(mychain.stream({"chat_history":history,"Question":user_input}))
