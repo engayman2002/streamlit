@@ -1,0 +1,12 @@
+.env
+check_model.py
+
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/

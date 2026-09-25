@@ -3,3 +3,10 @@ python-dotenv
 langchain-groq
 langchain-core
 langchain
+langchain-openai
+langchain-community
+pypdf
+chromadb
+langchain-google-genai
+google-generativeai
+langchain-chroma
